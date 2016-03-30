@@ -122,3 +122,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 username = "github"
+username = "default"
+
+name = "github"
+
