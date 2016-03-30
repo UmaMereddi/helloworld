@@ -1,2 +1,6 @@
 this is the sample test program
+<<<<<<< HEAD
 a = "hello"
+=======
+ a = "hello"
+>>>>>>> master
