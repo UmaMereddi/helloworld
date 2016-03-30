@@ -122,7 +122,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 username = "default"
-<<<<<<< HEAD
-=======
 
->>>>>>> master1
+name = "github"
