@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app = "myApp" ng-controller = "formCtrl" class = "container">
+<p>Enter Your Details Here:</p>
+<form name = "myForm" ng-submit = "submitForm()" role = "form">
+<div class = "form-group>
+   <label for = "FirstName">FirstName: </label>
+   <input type = "text" class = "form-control" id = "Fname" ng-model = "form.firstName" placeholder = "Enter First Name"><br><br>
+</div>
+<div class = "form-group">
+   <label for = "LastName">LastName:</label>
+   <input type = "text" class = "form-control" id = "Lname" ng-model = "form.lastName" placeholder = "Enter Last Name" required><br><br>
+</div>
+<div class = "form-group">
+   <label for = "Email">Emailid:</label>
+   <input type = "email" class = "form-control" id = "Email" ng-model = "form.emailId" placeholder = "Enter Email" disabled><br><br>
+</div>
+<div class = "form-group">
+   <label for = "PhnNo.">PhnNo.:</label>
+   <input type = "number" class = "form-control" id = "Phn" ng-model = "form.phnNo" placeholder = "Phone Number"><br><br>
+</div>
+<div class = "form-group">
+   <label>Click submit!</label>
+   <button type = "submit" class = "btn btn-primary btn-lg" ng-click = "save()">Submit</button>
+</div>
+</form>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope, $http) {
+          var formData = {
+                firstName: 'default',  
+                lastName: 'default',
+                emailId: 'default',
+                phnNo: 'default',
+              };
+         $scope.save = function () {
+                formData = $scope.form;
+         };
+         $scope.submitForm = function () {
+                 console.log("display input data");
+                 formData = $scope.form;
+                 console.log(formData);
+         };
+});
+</script>
+
+</body>
+</html>
+          
